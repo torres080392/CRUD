@@ -46,6 +46,7 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index')->with('success', 'Cliente creado exitosamente.');
     }
 
+    
 
     public function show($id)
     {
@@ -118,4 +119,10 @@ class ClienteController extends Controller
     // Redirige con un mensaje de éxito
     return redirect()->route('clientes.index')->with('success', 'Cliente eliminado con éxito.');
     }
+
+
+
+
+
+
 }

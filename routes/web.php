@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\SucursalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,32 @@ Route::patch('/clientes/{id}', [ClienteController::class, 'update'])->name('clie
 
 // Eliminar un cliente específico
 Route::delete('/clientes/{id}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
+
+//sucursales
+ // Listar todas las sucursales
+ Route::get('/sucursal', [SucursalController::class, 'index'])->name('sucursales.index');
+
+ // Mostrar el formulario para crear una nueva sucursal
+Route::get('/sucursal/create', [SucursalController::class, 'create'])->name('sucursales.create');
+
+// Mostrar una sucursl en específico
+Route::get('/sucursal/{id}', [SucursalController::class, 'show'])->name('sucursales.show');
+
+// Mostrar el formulario para editar una sucursa específico
+Route::get('/sucursal/{id}/edit', [SucursalController::class, 'edit'])->name('sucursales.edit');
+
+// Eliminar un cliente específico
+Route::delete('/sucursal/{id}', [SucursalController::class, 'destroy'])->name('sucursales.destroy');
+
+// Almacenar una sucursal
+Route::post('/sucursal', [SucursalController::class, 'store'])->name('sucursales.store');
+
+// Actualizar una sucursal en específico
+Route::patch('/sucursal/{id}', [SucursalController::class, 'update'])->name('sucursales.update');
+
+
+
+
 });
 
 require __DIR__.'/auth.php';
